@@ -9,11 +9,23 @@
 import Foundation
 
 
-struct Root: Codable {
-    let films: String
-    let people: String
-    let planets: String
-    let species: String
-    let starships: String
-    let vehicles: String
+struct Root {
+    static var films: URL {
+        return "http://swapi.co/api/films/".url
+    }
+    static var people: URL{
+        return "http://swapi.co/api/people/".url
+    }
+    static var planets: URL {
+        return "http://swapi.co/api/planets/".url
+    }
+    static var species: URL {
+        return "http://swapi.co/api/species/".url
+    }
+    static var starships: URL {
+        return "http://swapi.co/api/starships/".url
+    }
+    static var vehicles: URL {
+        return "http://swapi.co/api/vehicles/".url
+    }
 }

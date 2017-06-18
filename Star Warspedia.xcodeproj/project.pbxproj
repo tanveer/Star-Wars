@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B58E9BC2C64C4D55F02E070 /* Pods_Star_Warspedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13EFDC315032B6FE0F9D293F /* Pods_Star_Warspedia.framework */; };
 		A1EF56061EF613B300A43D33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF56051EF613B300A43D33 /* AppDelegate.swift */; };
 		A1EF56081EF613B300A43D33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF56071EF613B300A43D33 /* ViewController.swift */; };
 		A1EF560B1EF613B300A43D33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1EF56091EF613B300A43D33 /* Main.storyboard */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041B748AEC50D991CEE705B1 /* Pods-Star Warspedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Star Warspedia.release.xcconfig"; path = "Pods/Target Support Files/Pods-Star Warspedia/Pods-Star Warspedia.release.xcconfig"; sourceTree = "<group>"; };
+		13EFDC315032B6FE0F9D293F /* Pods_Star_Warspedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Star_Warspedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1EF56021EF613B300A43D33 /* Star Warspedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Star Warspedia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1EF56051EF613B300A43D33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1EF56071EF613B300A43D33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		A1EF560F1EF613B300A43D33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1EF56111EF613B300A43D33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1EF561C1EF6145300A43D33 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
+		C28C024BEE32447E8843B411 /* Pods-Star Warspedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Star Warspedia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Star Warspedia/Pods-Star Warspedia.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B58E9BC2C64C4D55F02E070 /* Pods_Star_Warspedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		054C00DACDC8AF74330C1C62 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C28C024BEE32447E8843B411 /* Pods-Star Warspedia.debug.xcconfig */,
+				041B748AEC50D991CEE705B1 /* Pods-Star Warspedia.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6A23790ED15058AEC7BD0E54 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13EFDC315032B6FE0F9D293F /* Pods_Star_Warspedia.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A1EF55F91EF613B300A43D33 = {
 			isa = PBXGroup;
 			children = (
 				A1EF56041EF613B300A43D33 /* Star Warspedia */,
 				A1EF56031EF613B300A43D33 /* Products */,
+				054C00DACDC8AF74330C1C62 /* Pods */,
+				6A23790ED15058AEC7BD0E54 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,9 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1EF56141EF613B300A43D33 /* Build configuration list for PBXNativeTarget "Star Warspedia" */;
 			buildPhases = (
+				DEC83BE80A7B34B642CFC47E /* [CP] Check Pods Manifest.lock */,
 				A1EF55FE1EF613B300A43D33 /* Sources */,
 				A1EF55FF1EF613B300A43D33 /* Frameworks */,
 				A1EF56001EF613B300A43D33 /* Resources */,
+				55F6A51D24821E62B2BFB956 /* [CP] Embed Pods Frameworks */,
+				21B1DBEEC05ED20DFD14B46F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -172,6 +199,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		21B1DBEEC05ED20DFD14B46F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Star Warspedia/Pods-Star Warspedia-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55F6A51D24821E62B2BFB956 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Star Warspedia/Pods-Star Warspedia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DEC83BE80A7B34B642CFC47E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A1EF55FE1EF613B300A43D33 /* Sources */ = {
@@ -311,6 +386,7 @@
 		};
 		A1EF56151EF613B300A43D33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C28C024BEE32447E8843B411 /* Pods-Star Warspedia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7GZ4GZQ8G6;
@@ -325,6 +401,7 @@
 		};
 		A1EF56161EF613B300A43D33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 041B748AEC50D991CEE705B1 /* Pods-Star Warspedia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7GZ4GZQ8G6;

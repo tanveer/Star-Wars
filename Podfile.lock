@@ -1,0 +1,26 @@
+PODS:
+  - Alamofire (4.4.0)
+  - Kingfisher (3.9.0)
+  - Moya (8.0.4):
+    - Moya/Core (= 8.0.4)
+  - Moya/Core (8.0.4):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Result (3.2.1)
+  - SVProgressHUD (2.1.2)
+
+DEPENDENCIES:
+  - Kingfisher
+  - Moya
+  - SVProgressHUD
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Kingfisher: 752686a0fbb300df3240ba86431168ab9244bef2
+  Moya: a08bc060c7a44eee27447b239ed33a189b641e2b
+  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+
+PODFILE CHECKSUM: a5e274b16e11855d107d31500c23fcde0f1ca557
+
+COCOAPODS: 1.2.0

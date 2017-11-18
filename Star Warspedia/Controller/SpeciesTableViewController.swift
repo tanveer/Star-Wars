@@ -7,53 +7,90 @@
 //
 
 import UIKit
-import Moya
 
 private let maxPageNumber = 4
-private let startPageNumber = 1
 
-class SpeciesTableViewController: UITableViewController {
+class SpeciesTableViewController: UIViewController {
 
-    private var species: [Species.Result] = []
+    private var species: [Species] = []
     private var page: Int = startPageNumber
+    @IBOutlet private weak var tableView: UITableView! {
+        didSet {
+            tableView.delegate = self
+            tableView.dataSource = self
+            tableView.estimatedRowHeight = 100
+            tableView.rowHeight = UITableViewAutomaticDimension
+            tableView.register(ReusableCell.nib, forCellReuseIdentifier: ReusableCell.id)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        fethSpecies()
+        fetchSpecies()
+        self.title = "SPECIES"
     }
 
-    private func fethSpecies(_ page: Int = startPageNumber) {
-        let decoder = JSONDecoder()
-        let fetch = MoyaProvider<SWAPI>()
-        fetch.request(.species(page)) { response in
-            guard let data = response.value?.data else {return}
-            do {
-                let results = try decoder.decode(Species.self, from: data)
-                self.species += results.species
+    private func fetchSpecies() {
+        Progress.show
+        SWAPI.requestSpecies(with: .species(self.page)) { species in
+            self.species = species
+            OperationQueue.main.addOperation {
                 self.tableView.reloadData()
-            } catch {
-                print(error.localizedDescription)
+                Progress.dismiss
             }
         }
     }
 
+    private func loadMoreData() {
+        if page < maxPageNumber {
+            page += startPageNumber
+            SWAPI.requestSpecies(with: .species(self.page)) { species in
+                self.species += species
+                OperationQueue.main.addOperation {
+                    self.tableView.reloadData()
+                }
+            }
+        } else {
+            Message.loadError(in: (String(describing: type(of: self))))
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SpeciesDetailViewController" {
+            if let dvc = segue.destination as? SpeciesDetailViewController {
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    dvc.species = species[indexPath.row]
+                }
+            }
+        }
+    }
+}
+extension SpeciesTableViewController: UITableViewDataSource {
+
+
     // MARK: - Table view data source
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return species.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SpeciesCell", for: indexPath)
-        cell.textLabel?.text = species[indexPath.row].name
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ReusableCell.id, for: indexPath) as! ReusableCell
+        cell.name = species[indexPath.row].name
         return cell
     }
+}
 
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == species.count - startPageNumber && page < maxPageNumber {
-            fethSpecies(page)
-            page += startPageNumber
+extension SpeciesTableViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastElement = species.count-1
+        if indexPath.row == lastElement {
+            loadMoreData()
         }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "SpeciesDetailViewController", sender: nil)
     }
 }

@@ -1,89 +1,48 @@
 //
-//  SWAPI.swift
+//  StarWarsData.swift
 //  Star Warspedia
 //
-//  Created by Tanveer Bashir on 6/17/17.
-//  Copyright © 2017 Tanveer Bashir. All rights reserved.
+//  Created by Tanveer Bashir on 1/1/18.
+//  Copyright © 2018 Tanveer Bashir. All rights reserved.
 //
 
 import Foundation
-import Moya
 
-enum SWAPI {
-    case films
-    case people(Int)
-    case planets(Int)
-    case species(Int)
-    case starships(Int)
-    case vehicles(Int)
-}
+class SWAPI {
 
-extension SWAPI: TargetType {
-    var baseURL: URL {
-        switch self {
-        case .films:
-            return Root.films
-        case .people:
-            return Root.people
-        case .planets:
-            return Root.planets
-        case .species:
-            return Root.species
-        case .starships:
-            return Root.starships
-        case .vehicles:
-            return Root.vehicles
+    class func requestFilms(with path: Path,  onSuccess: @escaping ([Film])->()) {
+        ApiController.fetchFilms(path) { films in
+            onSuccess(films)
         }
     }
 
-    var path: String {
-        switch self {
-        case .films: break
-        case .people: break
-        case .planets: break
-        case .species: break
-        case .starships: break
-        case .vehicles: break
+    class func requestPeople(with path: Path, onSuccess: @escaping ([People]) -> ()) {
+        ApiController.fetchPeople(path) { people in
+            onSuccess(people)
         }
-        return ""
     }
 
-    var method: Moya.Method {
-        return .get
-    }
-
-    var parameters: [String : Any]? {
-
-        switch self {
-        case .people(let page):
-            return ["page": "\(page)"]
-        case .films: break
-        case .planets(let page):
-            return ["page": "\(page)"]
-        case .species(let page):
-             return ["page": "\(page)"]
-        case .starships(let page):
-             return ["page": "\(page)"]
-        case .vehicles(let page):
-            return ["page": "\(page)"]
+    class func requestPlanets(with path: Path, onSuccess: @escaping ([Planet]) -> ())  {
+        ApiController.fetchPlanets(path) { planets in
+            onSuccess(planets)
         }
-        return [:]
     }
 
-    var parameterEncoding: ParameterEncoding {
-        return URLEncoding.default
+    class func requestVehicles(with path: Path, onSuccess: @escaping ([Vehicle]) -> ())  {
+        ApiController.fetchVehicles(path){ vehicles in
+            onSuccess(vehicles)
+        }
     }
 
-    var sampleData: Data {
-        return """
-                {
-                "error": "Failed to fetch from SWAPI server"
-                }
-                """.data(using: .utf8)!
+    class func requestStartships(with path: Path, onSuccess: @escaping ([Starship]) -> ())  {
+        ApiController.fetchStarships(path) { starships in
+            onSuccess(starships)
+        }
     }
 
-    var task: Task {
-        return .request
+    class func requestSpecies(with path: Path, onSuccess: @escaping ([Species]) -> ())  {
+        ApiController.fetchSpecies(path) { species in
+            onSuccess(species)
+        }
     }
-
 }

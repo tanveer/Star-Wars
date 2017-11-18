@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0PF-7O-Ilx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0PF-7O-Ilx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,16 +14,17 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0PF-7O-Ilx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Nj0-AX-ZGP">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="HEO-7p-YVD" kind="relationship" relationship="viewControllers" id="mue-HR-gxY"/>
-                        <segue destination="jtX-q4-vQI" kind="relationship" relationship="viewControllers" id="GDN-Gz-uki"/>
-                        <segue destination="7Sh-l5-8J5" kind="relationship" relationship="viewControllers" id="aIY-j3-6za"/>
-                        <segue destination="OrB-vh-1Ti" kind="relationship" relationship="viewControllers" id="YhI-43-1lK"/>
+                        <segue destination="49F-yk-srz" kind="relationship" relationship="viewControllers" id="vNr-qt-gd4"/>
                         <segue destination="qoG-PA-pmK" kind="relationship" relationship="viewControllers" id="92W-vy-Bbr"/>
                         <segue destination="YmU-7J-eGz" kind="relationship" relationship="viewControllers" id="aP9-c0-uXl"/>
+                        <segue destination="7Sh-l5-8J5" kind="relationship" relationship="viewControllers" id="aIY-j3-6za"/>
+                        <segue destination="OrB-vh-1Ti" kind="relationship" relationship="viewControllers" id="YhI-43-1lK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EQD-vG-UtR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -34,27 +35,27 @@
         <scene sceneID="cbG-Mz-SwB">
             <objects>
                 <viewControllerPlaceholder storyboardName="Films" id="HEO-7p-YVD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Lw7-fu-VlJ"/>
+                    <tabBarItem key="tabBarItem" title="Films" image="film-24" id="Lw7-fu-VlJ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qRX-Rr-bb9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1409" y="238"/>
         </scene>
-        <!--Characters-->
-        <scene sceneID="DcY-X0-d2R">
+        <!--Peoples-->
+        <scene sceneID="ta3-rs-TSJ">
             <objects>
-                <viewControllerPlaceholder storyboardName="Characters" id="jtX-q4-vQI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="241-aD-S4C"/>
+                <viewControllerPlaceholder storyboardName="Peoples" id="49F-yk-srz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="PEOPLE" image="people-24" id="drQ-5y-oOZ"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dAA-ec-XQN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yrh-UX-ww6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1255" y="238"/>
+            <point key="canvasLocation" x="-1259" y="237"/>
         </scene>
         <!--Planets-->
         <scene sceneID="yxr-A4-Rtf">
             <objects>
                 <viewControllerPlaceholder storyboardName="Planets" id="7Sh-l5-8J5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="wkj-0u-INF"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="Planet-24" id="wkj-0u-INF"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7bN-jG-QtR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,7 +65,7 @@
         <scene sceneID="l6j-hK-YbX">
             <objects>
                 <viewControllerPlaceholder storyboardName="Starships" id="OrB-vh-1Ti" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="SpJ-d7-9u6"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="Ship-24" id="SpJ-d7-9u6"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zyt-dJ-qBF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,7 +75,7 @@
         <scene sceneID="xdA-RV-r9U">
             <objects>
                 <viewControllerPlaceholder storyboardName="Species" id="qoG-PA-pmK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="itA-GU-enh"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="species-24" id="itA-GU-enh"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VY2-31-KsF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,11 +85,19 @@
         <scene sceneID="Tth-do-Hfe">
             <objects>
                 <viewControllerPlaceholder storyboardName="Vehicles" id="YmU-7J-eGz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="jRt-AB-cXb"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="vehicle-24" id="jRt-AB-cXb"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2m4-Y7-aEo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-638" y="237"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Planet-24" width="24" height="24"/>
+        <image name="Ship-24" width="24" height="24"/>
+        <image name="film-24" width="24" height="24"/>
+        <image name="people-24" width="24" height="24"/>
+        <image name="species-24" width="24" height="24"/>
+        <image name="vehicle-24" width="24" height="24"/>
+    </resources>
 </document>

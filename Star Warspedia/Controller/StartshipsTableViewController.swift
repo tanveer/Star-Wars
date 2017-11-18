@@ -7,54 +7,92 @@
 //
 
 import UIKit
-import Moya
 
 private let maxPageNumber = 4
-private let startPageNumber = 1
 
-class StartshipsTableViewController: UITableViewController {
+class StartshipsTableViewController: UIViewController {
+    @IBOutlet private weak var tableView: UITableView! {
+        didSet{
+            tableView.delegate = self
+            tableView.dataSource = self
+            tableView.estimatedRowHeight = 100
+            tableView.rowHeight = UITableViewAutomaticDimension
+            tableView.register(ReusableCell.nib, forCellReuseIdentifier: ReusableCell.id)
+        }
+    }
 
-    private var starships: [Starship.Result] = []
+    private var starships: [Starship] = []
     private var page: Int = startPageNumber
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         fetchStarships()
+
+        self.title = "STARSHIPS"
     }
 
-    private func fetchStarships(_ page: Int = startPageNumber) {
-        let decoder = JSONDecoder()
-        let fetch = MoyaProvider<SWAPI>()
-
-        fetch.request(.starships(page)) { response in
-            guard let data = response.value?.data else { return }
-            do {
-                let results = try decoder.decode(Starship.self, from: data)
-                self.starships += results.starships
+    private func fetchStarships() {
+        Progress.show
+        SWAPI.requestStartships(with: .starships(self.page)) { starships in
+            self.starships = starships
+            OperationQueue.main.addOperation {
                 self.tableView.reloadData()
-            } catch {
-                print(error.localizedDescription)
+                Progress.dismiss
             }
         }
     }
 
-    // MARK: - Table view data source
+    private func loadMoreData() {
+        if page < maxPageNumber {
+            page += startPageNumber
+            SWAPI.requestStartships(with: .starships(self.page)) { starships in
+                self.starships += starships
+                OperationQueue.main.addOperation {
+                    self.tableView.reloadData()
+                }
+            }
+        } else {
+            Message.loadError(in: (String(describing: type(of: self))))
+        }
+    }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "StarshipDetailViewController" {
+            if let dvc = segue.destination as? StarshipDetailViewController {
+                if let indexPath =  tableView.indexPathForSelectedRow {
+                    dvc.starship = starships[indexPath.row]
+                }
+            }
+        }
+    }
+}
+
+ // MARK: - UITableViewDataSource
+
+extension StartshipsTableViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return starships.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "StarshipCell", for: indexPath)
-        cell.textLabel?.text = starships[indexPath.row].name
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ReusableCell.id, for: indexPath) as! ReusableCell
+        cell.name = starships[indexPath.row].name
         return cell
     }
+}
 
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == starships.count - startPageNumber && page < maxPageNumber {
-            fetchStarships(page)
-            page += startPageNumber
+// MARK: - UITableViewDelegate
+
+extension StartshipsTableViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastElement = starships.count-1
+        if indexPath.row == lastElement {
+            loadMoreData()
         }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "StarshipDetailViewController", sender: nil)
     }
 }

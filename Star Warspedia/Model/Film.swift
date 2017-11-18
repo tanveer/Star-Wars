@@ -8,61 +8,52 @@
 
 import Foundation
 
-struct Result: Codable {
-    struct Film: Codable {
-        let title: String
-        let director: String
-        let episode_id: Int
-        let opening_crawl: String
-        let producer: String
-        let release_date: String
-        let url: String
-        let species: [String]
-        let starships: [String]
-        let characters: [String]
-        let vehicles: [String]
-        let planets: [String]
-    }
+struct Films: Codable {
     let films: [Film]
-
     private enum CodingKeys: String, CodingKey {
         case films = "results"
     }
 }
 
+struct Film: Codable {
+    let title: String
+    let director: String
+    let episode_id: Int
+    let opening_crawl: String
+    let producer: String
+    let release_date: String
+    let url: String
+    let species: [String]?
+    let starships: [String]?
+    let poeples: [String]?
+    let vehicles: [String]?
+    let planets: [String]?
 
-/*
- {
- "characters": [
- "http://swapi.co/api/people/1/",
- ...
- ],
- "created": "2014-12-10T14:23:31.880000Z",
- "director": "George Lucas",
- "edited": "2014-12-12T11:24:39.858000Z",
- "episode_id": 4,
- "opening_crawl": "It is a period of civil war.\n\nRebel spaceships, striking\n\nfrom a hidden base, have won\n\ntheir first victory against\n\nthe evil Galactic Empire.\n\n\n\nDuring the battle, Rebel\n\nspies managed to steal secret\r\nplans to the Empire's\n\nultimate weapon, the DEATH\n\nSTAR, an armored space\n\nstation with enough power\n\nto destroy an entire planet.\n\n\n\nPursued by the Empire's\n\nsinister agents, Princess\n\nLeia races home aboard her\n\nstarship, custodian of the\n\nstolen plans that can save her\n\npeople and restore\n\nfreedom to the galaxy....",
- "planets": [
- "http://swapi.co/api/planets/1/",
- ...
- ],
- "producer": "Gary Kurtz, Rick McCallum",
- "release_date": "1977-05-25",
- "species": [
- "http://swapi.co/api/species/1/",
- ...
- ],
- "starships": [
- "http://swapi.co/api/starships/2/",
- ...
- ],
- "title": "A New Hope",
- "url": "http://swapi.co/api/films/1/",
- "vehicles": [
- "http://swapi.co/api/vehicles/4/",
- ...
- ]
- }
+    var releaseDate: String {
+        let calender = Calendar.current
+        let componants = release_date.components(separatedBy: "-")
+        var calanderComponants = DateComponents()
+        calanderComponants.year = Int(componants[0])
+        calanderComponants.month = Int(componants[1])
+        calanderComponants.day = Int(componants[2])
+        let dateString = calender.date(from: calanderComponants)
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter.string(from: dateString!)
+    }
 
- */
-
+    init(jsonData: [String: Any]) {
+        self.title = jsonData["title"] as! String
+        self.director = jsonData["director"] as! String
+        self.episode_id = jsonData["episode_id"] as! Int
+        self.opening_crawl = jsonData["opening_crawl"] as! String
+        self.producer = jsonData["producer"] as! String
+        self.release_date = jsonData["release_date"] as! String
+        self.url = jsonData["url"] as! String
+        self.planets = []
+        self.poeples = []
+        self.species = []
+        self.vehicles = []
+        self.starships = []
+    }
+}

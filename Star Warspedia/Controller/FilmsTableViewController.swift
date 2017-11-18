@@ -7,40 +7,40 @@
 //
 
 import UIKit
-import Moya
 
 class FilmsTableViewController: UITableViewController {
 
-    var films: [Result.Film] = []
+    private var films: [Film] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         fetchFilms()
+
+        self.title = "FILMS"
+        tableView.estimatedRowHeight = 600
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.register(FilmTableViewCell.nib, forCellReuseIdentifier: FilmTableViewCell.id)
     }
 
     private func fetchFilms() {
-        let decoder = JSONDecoder()
-        let fetch = MoyaProvider<SWAPI>()
-        fetch.request(.films) { response in
-            guard let data = response.value?.data else { return }
-            do {
-                let result = try decoder.decode(Result.self, from: data)
-                self.films = result.films
+        Progress.show
+        SWAPI.requestFilms(with: .films) { (films) in
+            self.films = films
+            OperationQueue.main.addOperation {
                 self.tableView.reloadData()
-            } catch {
-                print(error.localizedDescription)
+                Progress.dismiss
             }
         }
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return films.count
-
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FilmsCell", for: indexPath)
-        cell.textLabel?.text = films[indexPath.row].title
+        let cell = tableView.dequeueReusableCell(withIdentifier: FilmTableViewCell.id, for: indexPath) as! FilmTableViewCell
+        cell.configure(films[indexPath.row])
         return cell
     }
 }

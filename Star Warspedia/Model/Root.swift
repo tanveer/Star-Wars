@@ -11,21 +11,21 @@ import Foundation
 
 struct Root {
     static var films: URL {
-        return "http://swapi.co/api/films/".url
+        return "https://swapi.co/api/films/".url
     }
     static var people: URL{
-        return "http://swapi.co/api/people/".url
+        return "https://swapi.co/api/people/".url
     }
     static var planets: URL {
-        return "http://swapi.co/api/planets/".url
+        return "https://swapi.co/api/planets/".url
     }
     static var species: URL {
-        return "http://swapi.co/api/species/".url
+        return "https://swapi.co/api/species/".url
     }
     static var starships: URL {
-        return "http://swapi.co/api/starships/".url
+        return "https://swapi.co/api/starships/".url
     }
     static var vehicles: URL {
-        return "http://swapi.co/api/vehicles/".url
+        return "https://swapi.co/api/vehicles/".url
     }
 }

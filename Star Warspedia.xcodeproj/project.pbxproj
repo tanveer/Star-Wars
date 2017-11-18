@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		5B58E9BC2C64C4D55F02E070 /* Pods_Star_Warspedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13EFDC315032B6FE0F9D293F /* Pods_Star_Warspedia.framework */; };
 		A105D98E1EF63BFB006C6E2D /* Films.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A105D98C1EF63BFB006C6E2D /* Films.storyboard */; };
-		A105D9901EF63C0C006C6E2D /* Characters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A105D98F1EF63C0C006C6E2D /* Characters.storyboard */; };
+		A105D9901EF63C0C006C6E2D /* Peoples.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A105D98F1EF63C0C006C6E2D /* Peoples.storyboard */; };
 		A105D9921EF63C2F006C6E2D /* Planets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A105D9911EF63C2F006C6E2D /* Planets.storyboard */; };
 		A105D9951EF63C5F006C6E2D /* Starships.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A105D9931EF63C5F006C6E2D /* Starships.storyboard */; };
 		A105D9971EF63C6B006C6E2D /* Species.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A105D9961EF63C6B006C6E2D /* Species.storyboard */; };
 		A105D99A1EF63C79006C6E2D /* Vehicles.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A105D9981EF63C79006C6E2D /* Vehicles.storyboard */; };
-		A105D99C1EF63DA1006C6E2D /* CharactersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A105D99B1EF63DA1006C6E2D /* CharactersTableViewController.swift */; };
-		A105D99E1EF63E15006C6E2D /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = A105D99D1EF63E15006C6E2D /* Character.swift */; };
+		A105D99C1EF63DA1006C6E2D /* PeoplesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A105D99B1EF63DA1006C6E2D /* PeoplesTableViewController.swift */; };
+		A105D99E1EF63E15006C6E2D /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = A105D99D1EF63E15006C6E2D /* People.swift */; };
 		A105D9A01EF69B92006C6E2D /* PlanetsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A105D99F1EF69B92006C6E2D /* PlanetsTableViewController.swift */; };
 		A105D9A21EF69BDD006C6E2D /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A105D9A11EF69BDD006C6E2D /* Planet.swift */; };
 		A105D9A41EF6A2A7006C6E2D /* StartshipsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A105D9A31EF6A2A7006C6E2D /* StartshipsTableViewController.swift */; };
@@ -24,28 +24,57 @@
 		A105D9AC1EF71A7A006C6E2D /* VehiclesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A105D9AB1EF71A7A006C6E2D /* VehiclesTableViewController.swift */; };
 		A1649CCF1EF725BA001121C9 /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1649CCE1EF725BA001121C9 /* Species.swift */; };
 		A1649CD11EF72B3F001121C9 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1649CD01EF72B3F001121C9 /* Vehicle.swift */; };
+		A1BCF5D01F12B3EE00FCF382 /* UIFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BCF5CF1F12B3EE00FCF382 /* UIFonts.swift */; };
+		A1BCF5D21F12BD4A00FCF382 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BCF5D11F12BD4A00FCF382 /* UIColor.swift */; };
 		A1EF56061EF613B300A43D33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF56051EF613B300A43D33 /* AppDelegate.swift */; };
 		A1EF56081EF613B300A43D33 /* FilmsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF56071EF613B300A43D33 /* FilmsTableViewController.swift */; };
 		A1EF560B1EF613B300A43D33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1EF56091EF613B300A43D33 /* Main.storyboard */; };
 		A1EF560D1EF613B300A43D33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1EF560C1EF613B300A43D33 /* Assets.xcassets */; };
 		A1EF56101EF613B300A43D33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1EF560E1EF613B300A43D33 /* LaunchScreen.storyboard */; };
 		A1EF561D1EF6145300A43D33 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF561C1EF6145300A43D33 /* Root.swift */; };
-		A1EF56201EF615BE00A43D33 /* SWAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF561F1EF615BE00A43D33 /* SWAPI.swift */; };
 		A1EF56231EF61FB700A43D33 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF56221EF61FB700A43D33 /* String.swift */; };
 		A1EF56251EF629B900A43D33 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF56241EF629B900A43D33 /* Film.swift */; };
+		E2215884200BCFCD00F84FF5 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2215883200BCFCD00F84FF5 /* Progress.swift */; };
+		E2ABEED31FFA0B0200DA6B69 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABEED21FFA0B0200DA6B69 /* Path.swift */; };
+		E2ABEED51FFA1F4300DA6B69 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABEED41FFA1F4300DA6B69 /* Endpoint.swift */; };
+		E2ABEED71FFA215700DA6B69 /* SWAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABEED61FFA215700DA6B69 /* SWAPI.swift */; };
+		E2ABEED91FFAB0DF00DA6B69 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABEED81FFAB0DF00DA6B69 /* Message.swift */; };
+		E2ABEEDE1FFAD9A400DA6B69 /* VeihcleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABEEDD1FFAD9A400DA6B69 /* VeihcleDetailViewController.swift */; };
+		E2ABEEE01FFAD9C300DA6B69 /* PeopleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABEEDF1FFAD9C300DA6B69 /* PeopleDetailViewController.swift */; };
+		E2ABEEE21FFAD9DD00DA6B69 /* StarshipDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABEEE11FFAD9DD00DA6B69 /* StarshipDetailViewController.swift */; };
+		E2ABEEE41FFAD9EC00DA6B69 /* SpeciesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABEEE31FFAD9EC00DA6B69 /* SpeciesDetailViewController.swift */; };
+		E2ABEEE61FFADA0200DA6B69 /* PlanetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABEEE51FFADA0200DA6B69 /* PlanetDetailViewController.swift */; };
+		E2AC3ACD200706A700B32859 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AC3ACC200706A700B32859 /* Double.swift */; };
+		E2AC3ACF2008371D00B32859 /* FilmTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2AC3ACE2008371D00B32859 /* FilmTableViewCell.xib */; };
+		E2C975C01FFEC9CB001A6E47 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C975BE1FFEC9CB001A6E47 /* ReusableCell.swift */; };
+		E2C975C11FFEC9CB001A6E47 /* ReusableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2C975BF1FFEC9CB001A6E47 /* ReusableCell.xib */; };
+		E2C975C31FFED800001A6E47 /* FilmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C975C21FFED800001A6E47 /* FilmTableViewCell.swift */; };
+		E2EE04581FF9D7B200E3F060 /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EE04571FF9D7B200E3F060 /* ApiController.swift */; };
+		E2F3F2231F688C310087954A /* Roboto Black Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F3F2211F6889890087954A /* Roboto Black Italic.ttf */; };
+		E2F3F2241F688C310087954A /* Roboto Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F3F21D1F6889880087954A /* Roboto Black.ttf */; };
+		E2F3F2251F688C310087954A /* Roboto Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F3F21B1F6889880087954A /* Roboto Bold Italic.ttf */; };
+		E2F3F2261F688C310087954A /* Roboto Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F3F2171F6889870087954A /* Roboto Bold.ttf */; };
+		E2F3F2271F688C310087954A /* Roboto Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F3F21E1F6889880087954A /* Roboto Italic.ttf */; };
+		E2F3F2281F688C310087954A /* Roboto Light Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F3F21F1F6889880087954A /* Roboto Light Italic.ttf */; };
+		E2F3F2291F688C310087954A /* Roboto Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F3F2201F6889890087954A /* Roboto Light.ttf */; };
+		E2F3F22A1F688C310087954A /* Roboto Medium Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F3F2181F6889870087954A /* Roboto Medium Italic.ttf */; };
+		E2F3F22B1F688C310087954A /* Roboto Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F3F21C1F6889880087954A /* Roboto Medium.ttf */; };
+		E2F3F22C1F688C310087954A /* Roboto Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F3F2191F6889870087954A /* Roboto Regular.ttf */; };
+		E2F3F22D1F688C310087954A /* Roboto Thin Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F3F2221F6889890087954A /* Roboto Thin Italic.ttf */; };
+		E2F3F22E1F688C310087954A /* Roboto Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F3F21A1F6889880087954A /* Roboto Thin.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		041B748AEC50D991CEE705B1 /* Pods-Star Warspedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Star Warspedia.release.xcconfig"; path = "Pods/Target Support Files/Pods-Star Warspedia/Pods-Star Warspedia.release.xcconfig"; sourceTree = "<group>"; };
 		13EFDC315032B6FE0F9D293F /* Pods_Star_Warspedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Star_Warspedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A105D98D1EF63BFB006C6E2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Films.storyboard; sourceTree = "<group>"; };
-		A105D98F1EF63C0C006C6E2D /* Characters.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Characters.storyboard; sourceTree = "<group>"; };
+		A105D98F1EF63C0C006C6E2D /* Peoples.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Peoples.storyboard; sourceTree = "<group>"; };
 		A105D9911EF63C2F006C6E2D /* Planets.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Planets.storyboard; sourceTree = "<group>"; };
 		A105D9941EF63C5F006C6E2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Starships.storyboard; sourceTree = "<group>"; };
 		A105D9961EF63C6B006C6E2D /* Species.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Species.storyboard; sourceTree = "<group>"; };
 		A105D9991EF63C79006C6E2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Vehicles.storyboard; sourceTree = "<group>"; };
-		A105D99B1EF63DA1006C6E2D /* CharactersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewController.swift; sourceTree = "<group>"; };
-		A105D99D1EF63E15006C6E2D /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		A105D99B1EF63DA1006C6E2D /* PeoplesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeoplesTableViewController.swift; sourceTree = "<group>"; };
+		A105D99D1EF63E15006C6E2D /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		A105D99F1EF69B92006C6E2D /* PlanetsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetsTableViewController.swift; sourceTree = "<group>"; };
 		A105D9A11EF69BDD006C6E2D /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		A105D9A31EF6A2A7006C6E2D /* StartshipsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartshipsTableViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +83,8 @@
 		A105D9AB1EF71A7A006C6E2D /* VehiclesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesTableViewController.swift; sourceTree = "<group>"; };
 		A1649CCE1EF725BA001121C9 /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
 		A1649CD01EF72B3F001121C9 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		A1BCF5CF1F12B3EE00FCF382 /* UIFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFonts.swift; sourceTree = "<group>"; };
+		A1BCF5D11F12BD4A00FCF382 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A1EF56021EF613B300A43D33 /* Star Warspedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Star Warspedia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1EF56051EF613B300A43D33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1EF56071EF613B300A43D33 /* FilmsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsTableViewController.swift; sourceTree = "<group>"; };
@@ -62,10 +93,37 @@
 		A1EF560F1EF613B300A43D33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1EF56111EF613B300A43D33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1EF561C1EF6145300A43D33 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
-		A1EF561F1EF615BE00A43D33 /* SWAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPI.swift; sourceTree = "<group>"; };
 		A1EF56221EF61FB700A43D33 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		A1EF56241EF629B900A43D33 /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		C28C024BEE32447E8843B411 /* Pods-Star Warspedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Star Warspedia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Star Warspedia/Pods-Star Warspedia.debug.xcconfig"; sourceTree = "<group>"; };
+		E2215883200BCFCD00F84FF5 /* Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
+		E2ABEED21FFA0B0200DA6B69 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		E2ABEED41FFA1F4300DA6B69 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		E2ABEED61FFA215700DA6B69 /* SWAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPI.swift; sourceTree = "<group>"; };
+		E2ABEED81FFAB0DF00DA6B69 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		E2ABEEDD1FFAD9A400DA6B69 /* VeihcleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeihcleDetailViewController.swift; sourceTree = "<group>"; };
+		E2ABEEDF1FFAD9C300DA6B69 /* PeopleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDetailViewController.swift; sourceTree = "<group>"; };
+		E2ABEEE11FFAD9DD00DA6B69 /* StarshipDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipDetailViewController.swift; sourceTree = "<group>"; };
+		E2ABEEE31FFAD9EC00DA6B69 /* SpeciesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesDetailViewController.swift; sourceTree = "<group>"; };
+		E2ABEEE51FFADA0200DA6B69 /* PlanetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailViewController.swift; sourceTree = "<group>"; };
+		E2AC3ACC200706A700B32859 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		E2AC3ACE2008371D00B32859 /* FilmTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilmTableViewCell.xib; sourceTree = "<group>"; };
+		E2C975BE1FFEC9CB001A6E47 /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
+		E2C975BF1FFEC9CB001A6E47 /* ReusableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReusableCell.xib; sourceTree = "<group>"; };
+		E2C975C21FFED800001A6E47 /* FilmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmTableViewCell.swift; sourceTree = "<group>"; };
+		E2EE04571FF9D7B200E3F060 /* ApiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
+		E2F3F2171F6889870087954A /* Roboto Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Bold.ttf"; sourceTree = "<group>"; };
+		E2F3F2181F6889870087954A /* Roboto Medium Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Medium Italic.ttf"; sourceTree = "<group>"; };
+		E2F3F2191F6889870087954A /* Roboto Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Regular.ttf"; sourceTree = "<group>"; };
+		E2F3F21A1F6889880087954A /* Roboto Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Thin.ttf"; sourceTree = "<group>"; };
+		E2F3F21B1F6889880087954A /* Roboto Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Bold Italic.ttf"; sourceTree = "<group>"; };
+		E2F3F21C1F6889880087954A /* Roboto Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Medium.ttf"; sourceTree = "<group>"; };
+		E2F3F21D1F6889880087954A /* Roboto Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Black.ttf"; sourceTree = "<group>"; };
+		E2F3F21E1F6889880087954A /* Roboto Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Italic.ttf"; sourceTree = "<group>"; };
+		E2F3F21F1F6889880087954A /* Roboto Light Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Light Italic.ttf"; sourceTree = "<group>"; };
+		E2F3F2201F6889890087954A /* Roboto Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Light.ttf"; sourceTree = "<group>"; };
+		E2F3F2211F6889890087954A /* Roboto Black Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Black Italic.ttf"; sourceTree = "<group>"; };
+		E2F3F2221F6889890087954A /* Roboto Thin Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto Thin Italic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +155,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A1BCF5B61F12B27E00FCF382 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E2F3F2211F6889890087954A /* Roboto Black Italic.ttf */,
+				E2F3F21D1F6889880087954A /* Roboto Black.ttf */,
+				E2F3F21B1F6889880087954A /* Roboto Bold Italic.ttf */,
+				E2F3F2171F6889870087954A /* Roboto Bold.ttf */,
+				E2F3F21E1F6889880087954A /* Roboto Italic.ttf */,
+				E2F3F21F1F6889880087954A /* Roboto Light Italic.ttf */,
+				E2F3F2201F6889890087954A /* Roboto Light.ttf */,
+				E2F3F2181F6889870087954A /* Roboto Medium Italic.ttf */,
+				E2F3F21C1F6889880087954A /* Roboto Medium.ttf */,
+				E2F3F2191F6889870087954A /* Roboto Regular.ttf */,
+				E2F3F2221F6889890087954A /* Roboto Thin Italic.ttf */,
+				E2F3F21A1F6889880087954A /* Roboto Thin.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		A1EF55F91EF613B300A43D33 = {
 			isa = PBXGroup;
 			children = (
@@ -118,10 +195,12 @@
 		A1EF56041EF613B300A43D33 /* Star Warspedia */ = {
 			isa = PBXGroup;
 			children = (
+				A1BCF5B61F12B27E00FCF382 /* Fonts */,
 				A1EF56051EF613B300A43D33 /* AppDelegate.swift */,
 				A1EF561A1EF613E800A43D33 /* Model */,
 				A1EF56191EF613E200A43D33 /* View */,
 				A1EF56181EF613D600A43D33 /* Controller */,
+				E2ABEEDC1FFAD97B00DA6B69 /* DetailViewController */,
 				A1EF56171EF613C100A43D33 /* Stroyboard */,
 				A1EF561B1EF613FB00A43D33 /* Supporting */,
 				A1EF56211EF61F9F00A43D33 /* Extensions */,
@@ -138,7 +217,7 @@
 				A105D9961EF63C6B006C6E2D /* Species.storyboard */,
 				A105D9931EF63C5F006C6E2D /* Starships.storyboard */,
 				A105D9911EF63C2F006C6E2D /* Planets.storyboard */,
-				A105D98F1EF63C0C006C6E2D /* Characters.storyboard */,
+				A105D98F1EF63C0C006C6E2D /* Peoples.storyboard */,
 				A105D98C1EF63BFB006C6E2D /* Films.storyboard */,
 				A1EF560E1EF613B300A43D33 /* LaunchScreen.storyboard */,
 			);
@@ -149,7 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				A1EF56071EF613B300A43D33 /* FilmsTableViewController.swift */,
-				A105D99B1EF63DA1006C6E2D /* CharactersTableViewController.swift */,
+				A105D99B1EF63DA1006C6E2D /* PeoplesTableViewController.swift */,
 				A105D99F1EF69B92006C6E2D /* PlanetsTableViewController.swift */,
 				A105D9A31EF6A2A7006C6E2D /* StartshipsTableViewController.swift */,
 				A105D9A91EF719C9006C6E2D /* SpeciesTableViewController.swift */,
@@ -161,6 +240,10 @@
 		A1EF56191EF613E200A43D33 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E2C975C21FFED800001A6E47 /* FilmTableViewCell.swift */,
+				E2AC3ACE2008371D00B32859 /* FilmTableViewCell.xib */,
+				E2C975BE1FFEC9CB001A6E47 /* ReusableCell.swift */,
+				E2C975BF1FFEC9CB001A6E47 /* ReusableCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,7 +253,7 @@
 			children = (
 				A1EF561C1EF6145300A43D33 /* Root.swift */,
 				A1EF56241EF629B900A43D33 /* Film.swift */,
-				A105D99D1EF63E15006C6E2D /* Character.swift */,
+				A105D99D1EF63E15006C6E2D /* People.swift */,
 				A105D9A11EF69BDD006C6E2D /* Planet.swift */,
 				A105D9A71EF6A325006C6E2D /* Starship.swift */,
 				A1649CCE1EF725BA001121C9 /* Species.swift */,
@@ -191,7 +274,11 @@
 		A1EF561E1EF6159500A43D33 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				A1EF561F1EF615BE00A43D33 /* SWAPI.swift */,
+				E2EE04571FF9D7B200E3F060 /* ApiController.swift */,
+				E2ABEED21FFA0B0200DA6B69 /* Path.swift */,
+				E2ABEED41FFA1F4300DA6B69 /* Endpoint.swift */,
+				E2ABEED61FFA215700DA6B69 /* SWAPI.swift */,
+				E2ABEED81FFAB0DF00DA6B69 /* Message.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -200,8 +287,24 @@
 			isa = PBXGroup;
 			children = (
 				A1EF56221EF61FB700A43D33 /* String.swift */,
+				A1BCF5CF1F12B3EE00FCF382 /* UIFonts.swift */,
+				A1BCF5D11F12BD4A00FCF382 /* UIColor.swift */,
+				E2AC3ACC200706A700B32859 /* Double.swift */,
+				E2215883200BCFCD00F84FF5 /* Progress.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E2ABEEDC1FFAD97B00DA6B69 /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E2ABEEDD1FFAD9A400DA6B69 /* VeihcleDetailViewController.swift */,
+				E2ABEEDF1FFAD9C300DA6B69 /* PeopleDetailViewController.swift */,
+				E2ABEEE11FFAD9DD00DA6B69 /* StarshipDetailViewController.swift */,
+				E2ABEEE31FFAD9EC00DA6B69 /* SpeciesDetailViewController.swift */,
+				E2ABEEE51FFADA0200DA6B69 /* PlanetDetailViewController.swift */,
+			);
+			path = DetailViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,12 +370,26 @@
 			files = (
 				A105D9951EF63C5F006C6E2D /* Starships.storyboard in Resources */,
 				A105D99A1EF63C79006C6E2D /* Vehicles.storyboard in Resources */,
+				E2F3F2241F688C310087954A /* Roboto Black.ttf in Resources */,
 				A1EF56101EF613B300A43D33 /* LaunchScreen.storyboard in Resources */,
+				E2F3F22D1F688C310087954A /* Roboto Thin Italic.ttf in Resources */,
+				E2F3F2261F688C310087954A /* Roboto Bold.ttf in Resources */,
 				A1EF560D1EF613B300A43D33 /* Assets.xcassets in Resources */,
+				E2F3F2281F688C310087954A /* Roboto Light Italic.ttf in Resources */,
+				E2AC3ACF2008371D00B32859 /* FilmTableViewCell.xib in Resources */,
 				A105D98E1EF63BFB006C6E2D /* Films.storyboard in Resources */,
-				A105D9901EF63C0C006C6E2D /* Characters.storyboard in Resources */,
+				E2F3F2251F688C310087954A /* Roboto Bold Italic.ttf in Resources */,
+				E2F3F2291F688C310087954A /* Roboto Light.ttf in Resources */,
+				E2F3F22C1F688C310087954A /* Roboto Regular.ttf in Resources */,
+				A105D9901EF63C0C006C6E2D /* Peoples.storyboard in Resources */,
 				A105D9971EF63C6B006C6E2D /* Species.storyboard in Resources */,
+				E2F3F22A1F688C310087954A /* Roboto Medium Italic.ttf in Resources */,
+				E2F3F22B1F688C310087954A /* Roboto Medium.ttf in Resources */,
+				E2F3F2271F688C310087954A /* Roboto Italic.ttf in Resources */,
+				E2C975C11FFEC9CB001A6E47 /* ReusableCell.xib in Resources */,
+				E2F3F2231F688C310087954A /* Roboto Black Italic.ttf in Resources */,
 				A105D9921EF63C2F006C6E2D /* Planets.storyboard in Resources */,
+				E2F3F22E1F688C310087954A /* Roboto Thin.ttf in Resources */,
 				A1EF560B1EF613B300A43D33 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,7 +439,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -332,21 +449,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2215884200BCFCD00F84FF5 /* Progress.swift in Sources */,
+				E2ABEEDE1FFAD9A400DA6B69 /* VeihcleDetailViewController.swift in Sources */,
 				A105D9A41EF6A2A7006C6E2D /* StartshipsTableViewController.swift in Sources */,
+				E2ABEED71FFA215700DA6B69 /* SWAPI.swift in Sources */,
+				E2ABEEE61FFADA0200DA6B69 /* PlanetDetailViewController.swift in Sources */,
 				A1EF56081EF613B300A43D33 /* FilmsTableViewController.swift in Sources */,
 				A1EF56251EF629B900A43D33 /* Film.swift in Sources */,
 				A105D9A81EF6A325006C6E2D /* Starship.swift in Sources */,
-				A105D99C1EF63DA1006C6E2D /* CharactersTableViewController.swift in Sources */,
+				A105D99C1EF63DA1006C6E2D /* PeoplesTableViewController.swift in Sources */,
 				A1EF56061EF613B300A43D33 /* AppDelegate.swift in Sources */,
 				A105D9A01EF69B92006C6E2D /* PlanetsTableViewController.swift in Sources */,
 				A1EF56231EF61FB700A43D33 /* String.swift in Sources */,
+				E2ABEEE41FFAD9EC00DA6B69 /* SpeciesDetailViewController.swift in Sources */,
+				E2C975C01FFEC9CB001A6E47 /* ReusableCell.swift in Sources */,
 				A1649CD11EF72B3F001121C9 /* Vehicle.swift in Sources */,
-				A1EF56201EF615BE00A43D33 /* SWAPI.swift in Sources */,
+				A1BCF5D21F12BD4A00FCF382 /* UIColor.swift in Sources */,
+				E2C975C31FFED800001A6E47 /* FilmTableViewCell.swift in Sources */,
+				E2ABEED51FFA1F4300DA6B69 /* Endpoint.swift in Sources */,
+				E2EE04581FF9D7B200E3F060 /* ApiController.swift in Sources */,
 				A1EF561D1EF6145300A43D33 /* Root.swift in Sources */,
-				A105D99E1EF63E15006C6E2D /* Character.swift in Sources */,
+				A1BCF5D01F12B3EE00FCF382 /* UIFonts.swift in Sources */,
+				A105D99E1EF63E15006C6E2D /* People.swift in Sources */,
 				A105D9AA1EF719C9006C6E2D /* SpeciesTableViewController.swift in Sources */,
 				A105D9AC1EF71A7A006C6E2D /* VehiclesTableViewController.swift in Sources */,
+				E2ABEEE01FFAD9C300DA6B69 /* PeopleDetailViewController.swift in Sources */,
 				A1649CCF1EF725BA001121C9 /* Species.swift in Sources */,
+				E2ABEED91FFAB0DF00DA6B69 /* Message.swift in Sources */,
+				E2ABEED31FFA0B0200DA6B69 /* Path.swift in Sources */,
+				E2ABEEE21FFAD9DD00DA6B69 /* StarshipDetailViewController.swift in Sources */,
+				E2AC3ACD200706A700B32859 /* Double.swift in Sources */,
 				A105D9A21EF69BDD006C6E2D /* Planet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

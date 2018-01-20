@@ -25,9 +25,9 @@ class FilmsTableViewController: UITableViewController {
 
     private func fetchFilms() {
         Progress.show
-        SWAPI.requestFilms(with: .films) { (films) in
-            self.films = films
-            OperationQueue.main.addOperation {
+        SWAPI.requestFilms(from: .films) { [unowned self] films in
+            DispatchQueue.main.async {
+                self.films = films
                 self.tableView.reloadData()
                 Progress.dismiss
             }
@@ -40,7 +40,7 @@ class FilmsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FilmTableViewCell.id, for: indexPath) as! FilmTableViewCell
-        cell.configure(films[indexPath.row])
+        cell.film = films[indexPath.row]
         return cell
     }
 }

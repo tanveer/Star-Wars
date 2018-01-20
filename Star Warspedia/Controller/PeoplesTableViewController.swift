@@ -22,7 +22,7 @@ class PeoplesTableViewController: UIViewController {
         }
     }
 
-    private var poeples: [People] = []
+    private var peoples: [People] = []
     private var page: Int = startPageNumber
 
     override func viewDidLoad() {
@@ -34,21 +34,17 @@ class PeoplesTableViewController: UIViewController {
 
     private func fetchPeoples() {
         Progress.show
-        SWAPI.requestPeople(with: .people(page)) { poeples in
-            self.poeples = poeples
-            OperationQueue.main.addOperation {
-                self.tableView.reloadData()
-                Progress.dismiss
-            }
+        SWAPI.requestPeople(from: .people(page)) { [unowned self] peoples in
+            self.sendToMainQueue(peoples)
         }
     }
 
     private func loadMoreData() {
         if page < maxPageNumber {
             page += startPageNumber
-            SWAPI.requestPeople(with: .people(page)) { poeples in
-                self.poeples += poeples
-                OperationQueue.main.addOperation {
+            SWAPI.requestPeople(from: .people(page)) { peoples in
+                self.peoples += peoples
+                OperationQueue.main.addOperation { [ unowned self] in
                     self.tableView.reloadData()
                 }
             }
@@ -57,11 +53,19 @@ class PeoplesTableViewController: UIViewController {
         }
     }
 
+    private func sendToMainQueue(_ data: [People]) {
+        DispatchQueue.main.async {  [unowned self] in
+            self.peoples = data
+            self.tableView.reloadData()
+            Progress.dismiss
+        }
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PeopleDetailViewController" {
             if let dvc = segue.destination as? PeopleDetailViewController {
                 if let indexPath = tableView.indexPathForSelectedRow {
-                    dvc.poeple = poeples[indexPath.row]
+                    dvc.people = peoples[indexPath.row]
                 }
             }
         }
@@ -70,19 +74,19 @@ class PeoplesTableViewController: UIViewController {
 
 extension PeoplesTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return poeples.count
+        return peoples.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: ReusableCell.id, for: indexPath) as! ReusableCell
-        cell.name = poeples[indexPath.row].name
+        cell.name = peoples[indexPath.row].name
         return cell
     }
 }
 
 extension PeoplesTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let lastElement = poeples.count-1
+        let lastElement = peoples.count-1
         if indexPath.row == lastElement {
             loadMoreData()
         }

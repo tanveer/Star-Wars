@@ -10,7 +10,7 @@ import UIKit
 
 class PeopleDetailViewController: UIViewController {
 
-    var poeple: People?
+    var people: People?
 
     @IBOutlet private weak var poepleLabel: UILabel!
     @IBOutlet private weak var poepleSpeciesLabel: UILabel!
@@ -29,16 +29,16 @@ class PeopleDetailViewController: UIViewController {
     }
 
     private func updateUI() {
-        if let poeple = poeple {
-            poepleLabel.text = poeple.name.uppercased()
-            genderLabel.text = poeple.gender.capitalized
-            birthYearLabel.text = poeple.birthYear
-            heightLabel.text = poeple.height.capitalized
-            skinColorLabel.text = poeple.skinColor.capitalized
-            eyeColorLabel.text = poeple.eyeColor.capitalized
-            hairColorLabel.text = poeple.hairColor.capitalized
-            massLabel.text = poeple.mass.capitalized
-            poepleSpeciesLabel.text = poeple.id
+        if let people = people {
+            poepleLabel.text = people.name.uppercased()
+            genderLabel.text = people.gender.capitalized
+            birthYearLabel.text = people.birthYear
+            heightLabel.text = people.height.capitalized
+            skinColorLabel.text = people.skinColor.capitalized
+            eyeColorLabel.text = people.eyeColor.capitalized
+            hairColorLabel.text = people.hairColor.capitalized
+            massLabel.text = people.mass.capitalized
+            poepleSpeciesLabel.text = people.id
         }
     }
 }

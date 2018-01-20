@@ -33,9 +33,9 @@ class SpeciesTableViewController: UIViewController {
 
     private func fetchSpecies() {
         Progress.show
-        SWAPI.requestSpecies(with: .species(self.page)) { species in
+        SWAPI.requestSpecies(from: .species(self.page)) { species in
             self.species = species
-            OperationQueue.main.addOperation {
+            OperationQueue.main.addOperation { [unowned self] in
                 self.tableView.reloadData()
                 Progress.dismiss
             }
@@ -45,9 +45,9 @@ class SpeciesTableViewController: UIViewController {
     private func loadMoreData() {
         if page < maxPageNumber {
             page += startPageNumber
-            SWAPI.requestSpecies(with: .species(self.page)) { species in
+            SWAPI.requestSpecies(from: .species(self.page)) { species in
                 self.species += species
-                OperationQueue.main.addOperation {
+                OperationQueue.main.addOperation { [unowned self] in
                     self.tableView.reloadData()
                 }
             }

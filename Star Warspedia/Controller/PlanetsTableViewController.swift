@@ -34,9 +34,9 @@ class PlanetsTableViewController: UIViewController {
 
     private func fetchPlanets() {
         Progress.show
-        SWAPI.requestPlanets(with: .planets(self.page)) { planets in
+        SWAPI.requestPlanets(from: .planets(self.page)) { planets in
             self.planets = planets
-            OperationQueue.main.addOperation {
+            OperationQueue.main.addOperation {[unowned self] in
                 self.tableView.reloadData()
                 Progress.dismiss
             }
@@ -46,9 +46,9 @@ class PlanetsTableViewController: UIViewController {
     private func loadMoreData() {
         if page < maxPageNumber {
             page += startPageNumber
-            SWAPI.requestPlanets(with: .planets(self.page)) { planets in
+            SWAPI.requestPlanets(from: .planets(self.page)) { planets in
                 self.planets += planets
-                OperationQueue.main.addOperation {
+                OperationQueue.main.addOperation { [unowned self] in
                     self.tableView.reloadData()
                 }
             }

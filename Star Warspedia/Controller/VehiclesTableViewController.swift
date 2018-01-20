@@ -34,9 +34,9 @@ class VehiclesTableViewController: UIViewController {
 
     private func fetchVehicles() {
         Progress.show
-        SWAPI.requestVehicles(with: .vehicles(1)) { (vehicles) in
+        SWAPI.requestVehicles(from: .vehicles(1)) { (vehicles) in
             self.vehicles = vehicles
-            OperationQueue.main.addOperation {
+            OperationQueue.main.addOperation { [unowned self] in
                 self.tableView.reloadData()
                 Progress.dismiss
             }
@@ -46,9 +46,9 @@ class VehiclesTableViewController: UIViewController {
     private func loadMoreData() {
         if page < maxPageNumber {
             page += startPageNumber
-            SWAPI.requestVehicles(with: .vehicles(1)) { (vehicles) in
+            SWAPI.requestVehicles(from: .vehicles(1)) { (vehicles) in
                 self.vehicles += vehicles
-                OperationQueue.main.addOperation {
+                OperationQueue.main.addOperation { [unowned self] in
                     self.tableView.reloadData()
                 }
             }

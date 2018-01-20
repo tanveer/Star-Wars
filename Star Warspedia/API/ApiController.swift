@@ -10,149 +10,46 @@ import Foundation
 
 typealias VoidClosure = () -> ()
 
+enum StarWars {
+    case film
+    case people
+    case starship
+    case planet
+    case species
+    case vehicle
+}
 
 class ApiController {
-    private static let session = URLSession.shared
-
-    // MARK: Films
-
-    class func fetchFilms(_ path: Path, onSuccess: @escaping ([Film]) -> ()) {
+    static func getStarWarsData(from path: Path, for type: StarWars, onSuccess: @escaping ([Any]) -> ()) {
         guard let url = Endpoint.getUrlPath(path) else {
             print(Message.invalidUrl)
             return
         }
         let urlRequst = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
-        let task = session.dataTask(with: urlRequst) { (data, _ , error) in
+        let task = URLSession.shared.dataTask(with: urlRequst) { (data, _ , error) in
             if error == nil {
                 if let data = data {
                     do {
-                        let films = try JSONDecoder().decode(Films.self, from: data).films
-                        onSuccess(films)
-                    } catch {
-                        Message.log(error)
-                    }
-                }
-            } else {
-                 Message.log(error)
-            }
-        }
-        task.resume()
-    }
-    // MARK: People
-
-    class func fetchPeople(_ path: Path, onSuccess: @escaping ([People]) -> ()) {
-        guard let url = Endpoint.getUrlPath(path) else {
-            print(Message.invalidUrl)
-            return
-        }
-        let urlRequst = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
-        let task = session.dataTask(with: urlRequst) { (data, _ , error) in
-            if error == nil {
-                if let data = data {
-                    do {
-                        let poeples = try JSONDecoder().decode(Peoples.self, from: data).poeples
-                        onSuccess(poeples)
-                    } catch {
-                        Message.log(error)
-                    }
-                }
-            } else {
-                 Message.log(error)
-            }
-        }
-        task.resume()
-    }
-
-    // MARK: Planets
-
-    class func fetchPlanets(_ path: Path, onSuccess: @escaping ([Planet]) -> ()) {
-        guard let url = Endpoint.getUrlPath(path) else {
-           print(Message.invalidUrl)
-            return
-        }
-        let urlRequst = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
-        let task = session.dataTask(with: urlRequst) { (data, _, error) in
-            if error == nil {
-                if let data = data {
-                    do {
-                        let planets = try JSONDecoder().decode(Planets.self, from: data).planets
-                        onSuccess(planets)
-                    } catch {
-                        Message.log(error)
-                    }
-                }
-            } else {
-                 Message.log(error)
-            }
-        }
-        task.resume()
-    }
-
-    // MARK: Species
-
-    class func fetchSpecies(_ path: Path, onSuccess: @escaping ([Species]) -> ()) {
-        guard let url = Endpoint.getUrlPath(path) else {
-            print(Message.invalidUrl)
-            return
-        }
-        let urlRequst = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
-        let task = session.dataTask(with: urlRequst) { (data, _ , error) in
-            if error == nil {
-                if let data = data {
-                    do {
-                        let species = try JSONDecoder().decode(kSpecies.self, from: data).species
-                        onSuccess(species)
-                    } catch {
-                        Message.log(error)
-                    }
-                }
-            } else {
-                Message.log(error)
-            }
-        }
-        task.resume()
-
-    }
-
-    // MARK: Vehicles
-
-    class func fetchVehicles(_ path: Path, onSuccess: @escaping ([Vehicle]) -> ()) {
-        guard let url = Endpoint.getUrlPath(path) else {
-            print(Message.invalidUrl)
-            return
-        }
-        let urlRequst = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
-        let task = session.dataTask(with: urlRequst) { (data, _ , error) in
-            if error == nil {
-                if let data = data {
-                    do {
-                        let vehicles = try JSONDecoder().decode(Vehicles.self, from: data).vehicles
-                        onSuccess(vehicles)
-                    } catch {
-                        Message.log(error)
-                    }
-                }
-            } else {
-                 Message.log(error)
-            }
-        }
-        task.resume()
-    }
-
-    // MARK: Starships
-
-    class func fetchStarships(_ path: Path, onSuccess: @escaping ([Starship]) -> ()) {
-        guard let url = Endpoint.getUrlPath(path) else {
-            print(Message.invalidUrl)
-            return
-        }
-        let urlRequst = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
-        let task = session.dataTask(with: urlRequst) { (data, _ , error) in
-            if error == nil {
-                if let data = data {
-                    do {
-                        let starships = try JSONDecoder().decode(Starships.self, from: data).starships
-                        onSuccess(starships)
+                        switch type {
+                        case .film:
+                            let films = try JSONDecoder().decode(Films.self, from: data).films
+                            onSuccess(films)
+                        case .people:
+                            let poeples = try JSONDecoder().decode(Peoples.self, from: data).poeples
+                            onSuccess(poeples)
+                        case .planet:
+                            let planets = try JSONDecoder().decode(Planets.self, from: data).planets
+                            onSuccess(planets)
+                        case .starship:
+                            let starships = try JSONDecoder().decode(Starships.self, from: data).starships
+                            onSuccess(starships)
+                        case .species:
+                            let species = try JSONDecoder().decode(kSpecies.self, from: data).species
+                            onSuccess(species)
+                        case .vehicle:
+                            let vehicles = try JSONDecoder().decode(Vehicles.self, from: data).vehicles
+                            onSuccess(vehicles)
+                        }
                     } catch {
                         Message.log(error)
                     }

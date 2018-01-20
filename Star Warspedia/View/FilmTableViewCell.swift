@@ -10,7 +10,15 @@ import UIKit
 
 class FilmTableViewCell: UITableViewCell {
 
-    func configure(_ film: Film) {
+    var film: Film? {
+        didSet{
+            if let film = film {
+                configure(film)
+            }
+        }
+    }
+
+    private func configure(_ film: Film) {
         let openingCraw = "Episode \(film.episode_id)\n\n\(film.opening_crawl)"
         titleLabel.text = film.title.uppercased()
         directorLabel.text = "Director: \(film.director)"

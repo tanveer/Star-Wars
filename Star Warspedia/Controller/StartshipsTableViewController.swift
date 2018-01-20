@@ -34,9 +34,9 @@ class StartshipsTableViewController: UIViewController {
 
     private func fetchStarships() {
         Progress.show
-        SWAPI.requestStartships(with: .starships(self.page)) { starships in
+        SWAPI.requestStartships(from: .starships(self.page)) { starships in
             self.starships = starships
-            OperationQueue.main.addOperation {
+            OperationQueue.main.addOperation { [unowned self] in
                 self.tableView.reloadData()
                 Progress.dismiss
             }
@@ -46,9 +46,9 @@ class StartshipsTableViewController: UIViewController {
     private func loadMoreData() {
         if page < maxPageNumber {
             page += startPageNumber
-            SWAPI.requestStartships(with: .starships(self.page)) { starships in
+            SWAPI.requestStartships(from: .starships(self.page)) { starships in
                 self.starships += starships
-                OperationQueue.main.addOperation {
+                OperationQueue.main.addOperation { [unowned self] in
                     self.tableView.reloadData()
                 }
             }
